@@ -20,4 +20,5 @@ s := "AnyKind of_string"
 | `ToDelimited(s, '.')`             | `any.kind.of.string` |
 | `ToScreamingDelimited(s, '.')`    | `ANY.KIND.OF.STRING` |
 | `ToCamel(s)`                      | `AnyKindOfString`    |
+| `ToUpperCamel(s)`                 | `AnyKindOfString`    |
 | `ToLowerCamel(s)`                 | `anyKindOfString`    |

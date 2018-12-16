@@ -30,6 +30,28 @@ import (
 
 func TestToCamel(t *testing.T) {
 	cases := [][]string{
+		[]string{"test_case", "testCase"},
+		[]string{"test", "test"},
+		[]string{"TestCase", "TestCase"},
+		[]string{" test  case ", "testCase"},
+		[]string{"", ""},
+		[]string{"many_many_words", "manyManyWords"},
+		[]string{"AnyKind of_string", "AnyKindOfString"},
+		[]string{"odd-fix", "oddFix"},
+		[]string{"numbers2And55with000", "numbers2And55With000"},
+	}
+	for _, i := range cases {
+		in := i[0]
+		out := i[1]
+		result := ToCamel(in)
+		if result != out {
+			t.Error("'" + result + "' != '" + out + "'")
+		}
+	}
+}
+
+func TestToUpperCamel(t *testing.T) {
+	cases := [][]string{
 		[]string{"test_case", "TestCase"},
 		[]string{"test", "Test"},
 		[]string{"TestCase", "TestCase"},
@@ -43,7 +65,7 @@ func TestToCamel(t *testing.T) {
 	for _, i := range cases {
 		in := i[0]
 		out := i[1]
-		result := ToCamel(in)
+		result := ToUpperCamel(in)
 		if result != out {
 			t.Error("'" + result + "' != '" + out + "'")
 		}

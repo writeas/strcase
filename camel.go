@@ -58,8 +58,14 @@ func toCamelInitCase(s string, initCase bool) string {
 	return n
 }
 
-// Converts a string to CamelCase
+// ToCamel converts a string to camelCase / CamelCase, leaving the first
+// character as it is.
 func ToCamel(s string) string {
+	return toCamelInitCase(s, false)
+}
+
+// ToUpperCamel converts a string to UpperCamelCase
+func ToUpperCamel(s string) string {
 	return toCamelInitCase(s, true)
 }
 
