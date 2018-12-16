@@ -29,7 +29,7 @@ import (
 	"strings"
 )
 
-// Converts a string to CamelCase
+// toCamelInitCase converts a string to CamelCase
 func toCamelInitCase(s string, initCase bool) string {
 	s = addWordBoundariesToNumbers(s)
 	s = strings.Trim(s, " ")
@@ -69,7 +69,7 @@ func ToUpperCamel(s string) string {
 	return toCamelInitCase(s, true)
 }
 
-// Converts a string to lowerCamelCase
+// ToLowerCamel converts a string to lowerCamelCase
 func ToLowerCamel(s string) string {
 	if s == "" {
 		return s
